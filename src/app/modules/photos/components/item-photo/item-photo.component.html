@@ -1,0 +1,4 @@
+<div class="photo-item bg-whitesmoke h-100 p-3" (click)="onSelectPhoto()">
+  <img [src]="photo?.thumbnailUrl || 'assets/no-image.png'" [alt]="photo?.title" [width]="150" [height]="150" (error)="onHandleError($event)">
+  <span class="family-font-poppins text-center fs-11 my-2">{{ photo?.title || '' }}</span>
+</div>

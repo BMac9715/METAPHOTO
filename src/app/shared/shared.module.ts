@@ -4,9 +4,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../material/material.module';
 import { MatPaginatorIntl } from '@angular/material/paginator';
 import { MatPaginatorIntlSpn } from './config/paginator.config';
+import { AddressPipe } from './pipes/address.pipe';
 
 @NgModule({
-    declarations: [],
+    declarations: [
+      AddressPipe
+    ],
     imports: [
       CommonModule,
       FormsModule,
@@ -16,11 +19,10 @@ import { MatPaginatorIntlSpn } from './config/paginator.config';
     exports: [
       CommonModule,
       FormsModule,
-      ReactiveFormsModule
+      ReactiveFormsModule,
+      AddressPipe
     ],
-    providers: [
-      { provide: MatPaginatorIntl, useClass: MatPaginatorIntlSpn }
-    ]
+    providers: [AddressPipe, { provide: MatPaginatorIntl, useClass: MatPaginatorIntlSpn }]
 })
 export class SharedModule
 {

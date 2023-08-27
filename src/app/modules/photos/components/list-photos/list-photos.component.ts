@@ -1,11 +1,10 @@
-import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { PhotosService } from 'src/app/core/services/photos.service';
 import { Photo } from '../../models/photo.interface';
 import { ResponsePagination } from '../../models/pagination.interface';
 import { SharedDataService } from 'src/app/core/services/shared-data.service';
 import { PageEvent } from '@angular/material/paginator';
-import { FiltersPhoto } from '../../models/filters.interface';
 
 @Component({
   selector: 'app-list-photos',

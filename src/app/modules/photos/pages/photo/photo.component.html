@@ -1,0 +1,77 @@
+<div class="photo-container px-5">
+  <div class="w-100">
+    <button mat-button class="mt-2" color="primary" (click)="onBack()">
+      <mat-icon>keyboard_arrow_left</mat-icon> Volver
+    </button>
+    <mat-divider class="my-2 border-blue-metaphoto"></mat-divider>
+  </div>
+  <div class="row mx-0 w-100">
+    <div class="col-xxl-8 col-xl-6 col-lg-7 col-md-12 col-sm-12 col-xs-12 p-3 d-flex justify-content-center">
+      <div class="image-container bg-whitesmoke">
+        <img [src]="photo?.url || ''" [width]="600" [height]="600" (error)="onHandleError($event)">
+      </div>
+    </div>
+    <div class="col-xxl-4 col-xl-4 col-lg-5 col-md-12 col-sm-12 col-xs-12 p-3">
+      <div class="d-flex flex-column">
+        <div class="w-100">
+          <span class="font-family-poppins color-blue-metaphoto fw-bold fs-6">Metadata</span>
+          <mat-divider class="my-2 border-blue-metaphoto"></mat-divider>
+        </div>
+        <div class="w-100 my-2">
+          <span class="font-family-poppins fs-14 fw-bold">Foto</span>
+          <div class="d-flex flex-column mt-2 mx-3">
+            <div class="font-family-poppins text-muted fs-14" *ngIf="isShowIds">
+              <span class="fw-bold">Id:</span> {{photo?.id || ''}}
+            </div>
+            <div class="font-family-poppins text-muted fs-14">
+              <span class="fw-bold">Title:</span> {{photo?.title || ''}}
+            </div>
+          </div>
+        </div>
+        <div class="w-100 my-2">
+          <span class="font-family-poppins fs-14 fw-bold">Albúm</span>
+          <div class="d-flex flex-column mt-2 mx-3">
+            <div class="font-family-poppins text-muted fs-14" *ngIf="isShowIds">
+              <span class="fw-bold">Id:</span> {{photo?.album?.id || ''}}
+            </div>
+            <div class="font-family-poppins text-muted fs-14">
+              <span class="fw-bold">Título:</span> {{ photo?.album?.title || '' }}
+            </div>
+          </div>
+        </div>
+        <div class="w-100 my-2">
+          <span class="font-family-poppins fs-14 fw-bold">Usuario</span>
+          <div class="d-flex flex-column mt-2 mx-3">
+            <div class="font-family-poppins text-muted fs-14 mb-1" *ngIf="isShowIds">
+              <span class="fw-bold">Id:</span> {{photo?.album?.user?.id || ''}}
+            </div>
+            <div class="font-family-poppins text-muted fs-14">
+              <span class="fw-bold">Nombre:</span> {{photo?.album?.user?.name || '' | titlecase}}
+            </div>
+            <div class="font-family-poppins text-muted fs-14 my-1">
+              <span class="fw-bold">Usuario:</span> {{photo?.album?.user?.username || ''}}
+            </div>
+            <div class="font-family-poppins text-muted fs-14">
+              <span class="fw-bold">Correo:</span> {{photo?.album?.user?.email || ''}}
+            </div>
+            <div class="font-family-poppins text-muted fs-14 my-1">
+              <span class="fw-bold">Dirección:</span> {{photo?.album?.user?.address | address}}
+            </div>
+            <div class="font-family-poppins text-muted fs-14">
+              <span class="fw-bold">Teléfono:</span> {{photo?.album?.user?.phone || ''}}
+            </div>
+            <div class="font-family-poppins text-muted fs-14 my-1">
+              <span class="fw-bold">Website:</span> {{photo?.album?.user?.website || ''}}
+            </div>
+            <div class="font-family-poppins text-muted fs-14">
+              <span class="fw-bold">Compania:</span> {{photo?.album?.user?.company?.name || ''}}
+            </div>
+          </div>
+        </div>
+        <div class="w-100 my-2">
+          <mat-checkbox [color]="'primary'" [(ngModel)]="isShowIds">Show Id's</mat-checkbox>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

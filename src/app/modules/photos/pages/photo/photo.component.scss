@@ -1,0 +1,11 @@
+.photo-container {
+  position: absolute;
+  height: calc(100vh - 72px);
+  width: 100%;
+}
+
+.image-container {
+  display: flex;
+  height: 600px;
+  width: 600px;
+}

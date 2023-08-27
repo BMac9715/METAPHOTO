@@ -1,0 +1,11 @@
+.photo-item {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+
+  &:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+}

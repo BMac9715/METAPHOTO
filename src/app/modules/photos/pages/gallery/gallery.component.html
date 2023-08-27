@@ -1,7 +1,7 @@
-<mat-drawer-container class="sidenav-container bg-white" autosize>
+<mat-drawer-container class="sidenav-container bg-white" [ngClass]="{'d-none': isPhotoSelect}" autosize>
   <mat-drawer #drawer
               class="sidenav"
-              [mode]="device.isDesktop() ? 'side': 'over'"
+              [mode]="'over'"
               [opened]="false">
     <app-filters></app-filters>
   </mat-drawer>
@@ -12,10 +12,10 @@
           type="button"
           color="primary"
           aria-label="Regresar"
-          [matTooltip]="isDrawerOpen ? 'Ocultar filtros' : 'Ver filtros'"
+          [matTooltip]="'Ver filtros'"
           [matTooltipPosition]="'right'"
           (click)="toggleDrawer(); drawer.toggle()">
-      <mat-icon>{{ isDrawerOpen ? 'keyboard_arrow_left' : 'keyboard_arrow_right' }}</mat-icon>
+      <mat-icon>{{ 'keyboard_arrow_right' }}</mat-icon>
     </button>
     </div>
     <div class="w-100">
@@ -23,3 +23,7 @@
     </div>
   </div>
 </mat-drawer-container>
+
+<ng-container *ngIf="isPhotoSelect">
+  <app-photo [photo]="currentPhoto"></app-photo>
+</ng-container>
