@@ -1,0 +1,33 @@
+<ng-container *ngIf="!isLoading; else loader">
+  <!-- Items -->
+  <div class="row h-90 mx-4 pt-4 pb-3 overflow-auto">
+    <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12" *ngFor="let photo of photos">
+      <span>{{ photo.title }}</span>
+    </div>
+  </div>
+</ng-container>
+
+<ng-template #loader>
+  <div class="d-flex justify-content-center align-items-center h-90">
+    <app-photo-loader [message]="'Obteniendo fotos...'"></app-photo-loader>
+  </div>
+</ng-template>
+
+<!-- Pagination-->
+<ng-container *ngIf="!isRestarPag">
+  <div class="row h-10 mx-4">
+    <div class="col-12 justify-content-center">
+      <mat-paginator
+          [length]="totalItems"
+          [pageSize]="limit"
+          [pageIndex]="0"
+          [pageSizeOptions]="[5, 10, 25, 50, 100]"
+          [color]="'primary'"
+          aria-label="Selecciona una página"
+          (page)="onPaginatorEvent($event)">
+      </mat-paginator>
+    </div>
+  </div>
+</ng-container>
+
+

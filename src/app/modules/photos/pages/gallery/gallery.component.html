@@ -1,0 +1,25 @@
+<mat-drawer-container class="sidenav-container bg-white" autosize>
+  <mat-drawer #drawer
+              class="sidenav"
+              [mode]="device.isDesktop() ? 'side': 'over'"
+              [opened]="false">
+    <app-filters></app-filters>
+  </mat-drawer>
+
+  <div class="sidenav-content">
+    <div>
+      <button mat-icon-button
+          type="button"
+          color="primary"
+          aria-label="Regresar"
+          [matTooltip]="isDrawerOpen ? 'Ocultar filtros' : 'Ver filtros'"
+          [matTooltipPosition]="'right'"
+          (click)="toggleDrawer(); drawer.toggle()">
+      <mat-icon>{{ isDrawerOpen ? 'keyboard_arrow_left' : 'keyboard_arrow_right' }}</mat-icon>
+    </button>
+    </div>
+    <div class="w-100">
+      <app-list-photos></app-list-photos>
+    </div>
+  </div>
+</mat-drawer-container>

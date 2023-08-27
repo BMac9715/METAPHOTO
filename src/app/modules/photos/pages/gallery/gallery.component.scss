@@ -1,0 +1,17 @@
+.sidenav-container {
+  position: absolute;
+  height: calc(100vh - 72px);
+  width: 100%;
+}
+
+.sidenav {
+  padding: 1rem;
+  max-width: 400px;
+  width: 300px;
+}
+
+.sidenav-content {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}

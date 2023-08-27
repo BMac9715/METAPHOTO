@@ -1,0 +1,43 @@
+<div class="d-flex flex-column w-100">
+  <div class="w-100">
+    <span class="font-family-poppins color-blue-metaphoto fs-6">Filtros</span>
+    <mat-divider class="my-2 border-blue-metaphoto"></mat-divider>
+  </div>
+  <div class="px-1 pt-3 pb-2">
+    <mat-form-field appearance="outline" [color]="'primary'" class="w-100">
+      <mat-label class="font-family-poppins">Título de Foto</mat-label>
+      <input matInput type="text" [formControl]="title">
+      <button *ngIf="title.value" matSuffix mat-icon-button aria-label="Clear" (click)="title.setValue('')">
+        <mat-icon>close</mat-icon>
+      </button>
+      <mat-error class="font-family-poppins fs-11">Longitud mínima de 3 carácteres</mat-error>
+    </mat-form-field>
+  </div>
+  <div class="px-1 py-1">
+    <mat-form-field appearance="outline" [color]="'primary'" class="w-100">
+      <mat-label class="font-family-poppins">Título de Albúm</mat-label>
+      <input matInput type="text" [formControl]="album">
+      <button *ngIf="album.value" matSuffix mat-icon-button aria-label="Clear" (click)="album.setValue('')">
+        <mat-icon>close</mat-icon>
+      </button>
+      <mat-error class="font-family-poppins fs-11">Longitud mínima de 3 carácteres</mat-error>
+    </mat-form-field>
+  </div>
+  <div class="px-1 py-1">
+    <mat-form-field appearance="outline" [color]="'primary'" class="w-100">
+      <mat-label class="font-family-poppins">Email de Usuario</mat-label>
+      <input matInput type="email" [formControl]="email">
+      <button *ngIf="email.value" matSuffix mat-icon-button aria-label="Clear" (click)="email.setValue('')">
+        <mat-icon>close</mat-icon>
+      </button>
+      <mat-error class="font-family-poppins fs-11">Email invalido</mat-error>
+    </mat-form-field>
+  </div>
+  <div class="m-auto w-50">
+    <button mat-stroked-button
+            type="button"
+            class="font-family-poppins w-100"
+            color="primary"
+            (click)="onFilter()">Aplicar</button>
+  </div>
+</div>
