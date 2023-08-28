@@ -34,6 +34,6 @@ export class PhotosService {
     params += `limit=${pag.limit}&`;
     params += `offset=${pag.offset}`;
 
-    return this.http.get<GalleryPhotos>(`${this.BASE_URL}/photos${params}`).pipe(delay(1000));
+    return this.http.get<GalleryPhotos>(`${this.BASE_URL}/photos${params}`);
   }
 }
