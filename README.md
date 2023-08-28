@@ -1,27 +1,55 @@
-# METAPHOTO
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.2.
+# METAPHOTO APP
 
-## Development server
+Web app for show results of externalapi photos
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Tools for development
+| Name |Versión | Scope |
+|--|--|--|
+| Node js | 18.12.1 | global |
+| npm| 8.19.2 | global |
+| Angular-cli | 15.0.2 | local |
 
-## Code scaffolding
+## Install Dependencies
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Install all package dependencies (one time operation)
 
-## Build
+```shell
+npm install
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Run It
+#### Run in *development* mode:
+Runs the application is development mode. Should not be used in production
 
-## Running unit tests
+```shell
+ng serve --configuration=development
+#or
+ng serve
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+#### Run in *production* mode:
 
-## Running end-to-end tests
+Compiles the application and starts it in production production mode.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```shell
+ng serve --configuration=production
+```
 
-## Further help
+## Try It
+* Open your browser to [http://localhost:4200](http://localhost:4200)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Docker
+In the root of the project you would see **Dockerfile**
+
+#### Create image
+```shell
+  #On the root of the project
+  docker build -t image:tag .
+  ```
+
+#### Run container
+By default the expose port always will be on port 80, if you want to change it, you will need to update **nginx config (nginx-custom.conf)**
+```shell
+  docker run -p 80:4200 image-id
+  ```
