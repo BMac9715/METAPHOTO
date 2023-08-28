@@ -1,4 +1,4 @@
 export const environment = {
     production: true,
-    apiURL: 'https://pokeapi.co/api/v2'
+    apiURL: 'https://externalapi-photos-r3agzp23ua-uc.a.run.app/externalapi'
 };
